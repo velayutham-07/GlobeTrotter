@@ -8,8 +8,3 @@ Backend API for the GlobeTrotter travel planning application.
 - PostgreSQL
 - SQLAlchemy
 - Alembic
-
-## Setup
-
-Coming soon...
-
