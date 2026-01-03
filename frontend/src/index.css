@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ocean teal primary - adventure & exploration */
+    --primary: 183 58% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 183 58% 45%;
+    
+    /* Warm coral accent - excitement & warmth */
+    --accent: 16 85% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Backgrounds */
+    --background: 40 30% 98%;
+    --foreground: 220 25% 15%;
+    
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    
+    /* Secondary - muted teal */
+    --secondary: 183 25% 94%;
+    --secondary-foreground: 183 58% 25%;
+    
+    /* Muted */
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 183 58% 35%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 183 58% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 183 25% 94%;
+    --sidebar-accent-foreground: 183 58% 25%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 183 58% 35%;
+    
+    /* Custom travel colors */
+    --ocean: 183 58% 35%;
+    --ocean-light: 183 45% 92%;
+    --coral: 16 85% 60%;
+    --coral-light: 16 70% 95%;
+    --sand: 40 40% 90%;
+    --forest: 150 35% 40%;
+    --sunset: 35 90% 55%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(183 58% 35%) 0%, hsl(200 65% 45%) 50%, hsl(183 45% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(16 85% 60%) 0%, hsl(35 90% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 25% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(220 25% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(220 25% 15% / 0.18);
+    --shadow-glow: 0 0 40px hsl(183 58% 35% / 0.25);
+  }
+
+  .dark {
+    --primary: 183 55% 50%;
+    --primary-foreground: 220 25% 10%;
+    --primary-glow: 183 55% 60%;
+    
+    --accent: 16 80% 65%;
+    --accent-foreground: 220 25% 10%;
+    
+    --background: 220 25% 8%;
+    --foreground: 40 15% 95%;
+    
+    --card: 220 20% 12%;
+    --card-foreground: 40 15% 95%;
+    
+    --popover: 220 20% 12%;
+    --popover-foreground: 40 15% 95%;
+    
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 183 55% 70%;
+    
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+    
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 183 55% 50%;
+    
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 40 15% 95%;
+    --sidebar-primary: 183 55% 50%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 183 55% 70%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 183 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: var(--gradient-hero);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
